@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:time_tracker_flutter_course/screens/login/validator.dart';
 import 'package:time_tracker_flutter_course/services/auth.dart';
+import 'package:time_tracker_flutter_course/services/platform_alert_dialog.dart';
 import 'package:time_tracker_flutter_course/widgets/form_submit_button.dart';
 
 enum EmailSignInFormType { signIn, register }
@@ -37,7 +38,11 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
       }
       Navigator.of(context).pop();
     } catch (e) {
-      print(e.toString());
+      PlatformAlertDialog(
+        title: 'Sign in failed',
+        content: e.toString(),
+        defaultActionText: 'OK',
+      ).show(context);
     } finally {
       setState(() {
         _isLoading = false;
@@ -56,7 +61,7 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
     FocusScope.of(context).requestFocus(newFocus);
   }
 
-  void _toggleFormtype() {
+  void _toggleFormType() {
     setState(() {
       _submitted = false;
       _formType = _formType == EmailSignInFormType.signIn
@@ -125,7 +130,7 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
         height: 10.0,
       ),
       FlatButton(
-        onPressed: !_isLoading ? _toggleFormtype : null,
+        onPressed: !_isLoading ? _toggleFormType : null,
         child: Text(secondaryText),
       ),
     ];
