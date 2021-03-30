@@ -1,30 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:time_tracker_flutter_course/screens/login/email_sign_in_page.dart';
 import 'package:time_tracker_flutter_course/services/auth.dart';
 import 'package:time_tracker_flutter_course/widgets/reusable_button.dart';
 
 class SignInPage extends StatelessWidget {
-  final AuthBase auth;
-  SignInPage({@required this.auth});
-
-  Future<void> _signInAnonymously() async {
+  Future<void> _signInAnonymously(BuildContext context) async {
     try {
+      final auth = Provider.of<AuthBase>(context, listen: false);
+
       await auth.signInAnonymously();
     } catch (e) {
       print(e.toString());
     }
   }
 
-  Future<void> _signInWithGoogle() async {
+  Future<void> _signInWithGoogle(BuildContext context) async {
     try {
+      final auth = Provider.of<AuthBase>(context, listen: false);
+
       await auth.signInWithGoogle();
     } catch (e) {
       print(e.toString());
     }
   }
 
-  Future<void> _signInWithFacebook() async {
+  Future<void> _signInWithFacebook(BuildContext context) async {
     try {
+      final auth = Provider.of<AuthBase>(context, listen: false);
+
       await auth.signInWithFacebook();
     } catch (e) {
       print(e.toString());
@@ -32,11 +36,11 @@ class SignInPage extends StatelessWidget {
   }
 
   void _signInWithEmail(BuildContext context) {
+    final auth = Provider.of<AuthBase>(context, listen: false);
+
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (context) => EmailSignInPage(
-          auth: auth,
-        ),
+        builder: (context) => EmailSignInPage(),
       ),
     );
   }
@@ -83,7 +87,7 @@ class SignInPage extends StatelessWidget {
                   ),
                 ],
               ),
-              callback: _signInWithGoogle,
+              callback: () => _signInWithGoogle(context),
               color: Colors.white,
             ),
             SizedBox(
@@ -107,7 +111,7 @@ class SignInPage extends StatelessWidget {
                   ),
                 ],
               ),
-              callback: _signInWithFacebook,
+              callback: () => _signInWithFacebook(context),
               color: Color(0xFF334D92),
             ),
             SizedBox(
@@ -146,7 +150,7 @@ class SignInPage extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              callback: _signInAnonymously,
+              callback: () => _signInAnonymously(context),
               color: Colors.lime[300],
             ),
           ],
