@@ -12,7 +12,6 @@ class NormalUser {
 abstract class AuthBase {
   Stream<NormalUser> get onAuthStateChanged;
   Future<NormalUser> currentUser();
-  Future<NormalUser> signInAnonymously();
   Future<NormalUser> signInWithEmailAndPassword(
     String email,
     String password,
@@ -21,6 +20,7 @@ abstract class AuthBase {
     String email,
     String password,
   );
+  Future<NormalUser> signInAnonymously();
   Future<NormalUser> signInWithGoogle();
   Future<NormalUser> signInWithFacebook();
   Future<void> signOut();
