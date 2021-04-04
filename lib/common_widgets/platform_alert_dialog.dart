@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:time_tracker_flutter_course/services/platform_widget.dart';
+
+import 'file:///C:/Users/Intruder/AndroidStudioProjects/time_tracker_flutter_course/lib/common_widgets/platform_widget.dart';
 
 class PlatformAlertDialog extends PlatformWidget {
   PlatformAlertDialog({

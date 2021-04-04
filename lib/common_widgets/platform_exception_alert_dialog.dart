@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
-import 'package:time_tracker_flutter_course/services/platform_alert_dialog.dart';
+
+import 'file:///C:/Users/Intruder/AndroidStudioProjects/time_tracker_flutter_course/lib/common_widgets/platform_alert_dialog.dart';
 
 class PlatformExceptionAlertDialog extends PlatformAlertDialog {
   PlatformExceptionAlertDialog({

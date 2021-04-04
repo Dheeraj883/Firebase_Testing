@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:time_tracker_flutter_course/widgets/reusable_button.dart';
+import 'package:time_tracker_flutter_course/common_widgets/reusable_button.dart';
 
 class FormSubmitButton extends ReusableButton {
   FormSubmitButton({

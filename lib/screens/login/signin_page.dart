@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:time_tracker_flutter_course/common_widgets/reusable_button.dart';
 import 'package:time_tracker_flutter_course/screens/login/email_sign_in_page.dart';
 import 'package:time_tracker_flutter_course/screens/login/sign_in_manager.dart';
 import 'package:time_tracker_flutter_course/services/auth.dart';
-import 'package:time_tracker_flutter_course/services/platform_exception_alert_dialog.dart';
-import 'package:time_tracker_flutter_course/widgets/reusable_button.dart';
+
+import 'file:///C:/Users/Intruder/AndroidStudioProjects/time_tracker_flutter_course/lib/common_widgets/platform_exception_alert_dialog.dart';
 
 class SignInPage extends StatelessWidget {
   final SignInManager manager;

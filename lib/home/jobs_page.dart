@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker_flutter_course/services/auth.dart';
-import 'package:time_tracker_flutter_course/services/platform_alert_dialog.dart';
 
-class HomePage extends StatelessWidget {
+import 'file:///C:/Users/Intruder/AndroidStudioProjects/time_tracker_flutter_course/lib/common_widgets/platform_alert_dialog.dart';
+
+class JobsPage extends StatelessWidget {
   Future<void> _signOut(BuildContext context) async {
     try {
       final auth = Provider.of<AuthBase>(context, listen: false);
@@ -29,7 +30,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: Text('Jobs Page'),
         actions: [
           FlatButton(
             child: Text(
